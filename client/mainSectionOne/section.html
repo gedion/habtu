@@ -46,21 +46,31 @@
                     {{/if}}
                 </ul>
             </div>
-            <div class="module-hero-bottom">
-                <ul>
-                    <li class="active-color" style="color: rgb(153, 153, 153);">●</li>
-                    <li class="">●</li>
-                    <li class="">●</li>
-                    <li class="">●</li>
-                </ul>
-            </div>
+            {{#if tabToShow "contemp"}}
+                {{>sectionTabs tab="contempo"}}
+            {{else}}
+                {{#if tabToShow "theEdge"}}
+                    {{>sectionTabs tab="theEdge"}}
+                {{else}}
+                    {{>sectionTabs tab="sp"}}
+                {{/if}}
+            {{/if}}
         </div>
     </section>
 </template>
 
+
+<template name="sectionTabs">
+    <div class="module-hero-bottom">
+        <ul>
+            {{#each tab}}
+                <li class="{{activeClass}}" style="{{activeColor}}">●</li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
 <template name="sectionTwo">
     <section class="clearfix">
-
 
         <!-- What's New -->
         <div class="whats-new-index">

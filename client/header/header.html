@@ -63,36 +63,23 @@
                         </div>
                     </form>
                 </div>
-        {{>goalsNav}}
+        {{>menuNav}}
     </header>
 </template>
 
-<template name="goalsNav">
+<template name="menuNav">
         <ul data-breakpoint="800" class="flexnav">
-            {{#each goals}}
+            {{#each items}}
             <li><a href="/{{ref}}">{{label}}</a>
                 <ul>
-                    {{> weeklyGoals}}
+                    {{> menuItems}}
                 </ul>
             </li>
             {{/each}}
         </ul>
 </template>
 
-<template name="weeklyGoals">
-    {{#each weeklyGoals}}
-    <li><a href="/{{ref}}">Item {{label}}</a>
-        {{> dailyGoals}}
-    </li>
-    {{/each}}
+<template name="menuItems">
+    <div> {{menuItem}} </div>
 </template>
-<template name="dailyGoals">
-    <ul>
-        {{#each dailyGoals}}
-        {{> dayGoal}}
-        {{/each}}
-    </ul>
-</template>
-<template name="dayGoal">
-    <li><a href="/{{ref}}">Subitem {{label}} </a></li>
-</template>
+
