@@ -1,0 +1,55 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Room</title>
+    <link href="https://www.lashowroom.com/dist/css/lashowroom.min.css?d41d8cd98f00b204e9800998ecf8427e" rel="stylesheet" type="text/css">
+</head>
+
+<template name="tabs">
+    <div class="las-default-wrap center clearfix">
+        {{#each tabs}}
+            <div class="tab-home-page {{active}}"><p class="{{class}}">{{label}}</p></div>
+        {{/each}}
+    </div>
+</template>
+<!--template name="main">
+    <div class="container">
+        {{>header}}
+    </div>
+    {{>tabs}}
+    {{>homePageAd}}
+    {{>footer}}
+</template>
+
+
+
+<template name="homePageAd">
+    <div class="clearfix page-top-bottom-padding tab-target tab-target-2" id="hp_tab_ad_2">
+        <div class="las-default-wrap center">
+                {{>edgeSection}}
+                {{>edgeWhatsNewSection}}
+        </div>
+    </div>
+</template -->
+<template name="main">
+{{>header}}
+    <main>
+        <!-- Home Page Advertisements -->
+        <div class="home-page-ad-inc clear" style="display: block;">
+            {{>tabs}}
+            <div class="clearfix page-top-bottom-padding tab-target tab-target-1" id="hp_tab_ad_1">
+                <div class="las-default-wrap center">
+                    <!-- Hero Image hp -->
+                    {{>sectionOne}}
+                    <!-- End hero Image hp -->
+
+
+                    <!-- First module; What's New + Vendor Day-->
+                   {{sectionTwo}}
+                </div>
+            </div>
+        </div>
+        <div class="spinner" style="display: none;"></div>
+    </main>
+    {{>footer}}
+</template>

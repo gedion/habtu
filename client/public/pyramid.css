@@ -1,0 +1,66 @@
+.pyramid{
+
+}
+
+.sweet,.fats,.protein-dairy,.carbs,.fruits,.veggies{
+
+}
+.sweet{
+}
+.fats{
+}
+.protein-dairy{
+}
+.carbs{
+
+}
+
+.fruits{
+    fill: url("#linearGradient3173") none;
+    fill-opacity: 1;
+    fill-rule: evenodd;
+    stroke: none;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    stroke-opacity: 1;
+    stroke-width: 1px;
+}
+.veggies{
+
+}
+
+.pyramid-base{
+
+}
+.fats-1{
+
+}
+.circle{
+    background-color: white;
+    border-radius: 50%;
+    height: 24px;
+    width: 25px;
+}
+
+.fat-circle-1{
+
+}
+
+.fat-circle-2{
+
+}
+
+.fat-circle-3{
+
+}
+
+.fats{
+    fill: url("#linearGradient3173") none;
+    fill-opacity: 1;
+    fill-rule: evenodd;
+    stroke: none;
+    stroke-linecap: butt;
+    stroke-linejoin: miter;
+    stroke-opacity: 1;
+    stroke-width: 1px;
+}

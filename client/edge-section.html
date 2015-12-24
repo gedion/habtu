@@ -1,0 +1,127 @@
+<template name="galleries">
+    <li>
+        <div class="hero-banner-hp template-hero-ad center-tmp clearfix" style="background-image: url({{gallery.bgsrc}});">
+            <div class="template-hero-ad-container clearfix">
+                <div class="template-hero-ad-container-gallery">
+                    <div class="template-hero-ad-container-gallery-container">
+                        <div class="template-hero-ad-gallery">
+                            <ul class='clearfix'>
+                                {{#each gallery.gal}}
+                                    <li>
+                                        <a href="{{href}}" title="{{title}}">
+                                            <img class="{{class}}" src="{{src}}" alt="{{title}}">
+                                        </a>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <div class="level-one-hero-ads-text index-partial desktop-hide">
+                            <div>
+                                <a href="{{gallery.bghref}}">
+                                    <img src="{{gallery.bgsrc2}}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</template>
+
+
+<template name="sectionOne">
+    <section class="clearfix">
+        <div class="module-hero">
+            <div class="module-hero-img">
+                <ul>
+                    {{#if tabToShow "contemp"}}
+                        {{>galleries tab="contempo"}}
+                    {{else}}
+                        {{#if tabToShow "theEdge"}}
+                            {{>galleries tab="theEdge"}}
+                        {{else}}   
+                            {{>galleries tab="sp"}}
+                        {{/if}}
+                    {{/if}}
+                </ul>
+            </div>
+            <div class="module-hero-bottom">
+                <ul>
+                    <li class="active-color" style="color: rgb(153, 153, 153);">●</li>
+                    <li class="">●</li>
+                    <li class="">●</li>
+                    <li class="">●</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</template>
+
+<template name="sectionTwo">
+    <section class="clearfix">
+
+
+        <!-- What's New -->
+        <div class="whats-new-index">
+
+            <div class="whats-new-index-container">
+
+                <div class="whats-new-index-topheader clearfix">
+                    <h5>What's new from: <a href="/lovein"><span>Love In</span></a>
+</h5>
+                    <a href="/lovein">
+                        <img src="//media.scdn4.secure.raxcdn.com/logo/8/logo8_lovein.png" alt="">
+                    </a>
+                </div>
+
+
+                <div class="whats-new-index-gallery clearfix">
+                    <ul class="clearfix">
+
+                        <li>
+                            <a href="/lovein/item/111" title="D6190">
+                                <img src="https://648720f9e1d824de8548-9efb35add89cb3bef33ff1e994581f39.ssl.cf1.rackcdn.com/LZZ2015121714500955910595_Color_M_0.jpg" alt="D6190">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <div class="whats-new-index-text">
+                    <h2>Buy From the Source!</h2>
+
+                    <p>
+                        Buy factory direct! Find the lowest prices on wholesale apparel by shopping straight from the manufacturer.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <!-- What's New END-->
+
+
+        <!-- Vendor of the Day -->
+
+        <div class="vendor-day-square-ad-module-first">
+            <div class="vendor-day-square-ad-module-first-top">
+                <h2>Vendor of the day</h2>
+                <span>Sponsored By</span>
+                <p><a href="/landb">L &amp; B</a></p>
+            </div>
+
+            <div class="vendor-day-square-ad-module-first-images clearfix">
+                <ul style="height: 304.907px;">
+                    <li>
+                        <a href="/landb/item/2311" title="LB016"><img class="vendor-day-square-ad-module-mid-1" src="https://d98cb068e1a570189675-a47acd2dac0c3199a08a9c0879b96609.ssl.cf1.rackcdn.com/AFZ20151208172037_COLOR_200_0.jpg" alt="LB016"></a>
+                    </li>
+                 </ul>
+            </div>
+
+        </div>
+        <!-- Vendor of the Day END-->
+
+        <!-- First module; What's New + Vendor Day END-->
+    </section>
+</template>
