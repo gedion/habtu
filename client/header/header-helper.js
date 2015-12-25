@@ -1,11 +1,11 @@
 Template.menuNav.helpers({
     items: function() {
         return [
-//            {ref:"WOMENS MANUFACTURERS",label:"የሰቶች መፍጠር",descr:"Run a mile a day!"},
+            {ref:"WOMENS MANUFACTURERS",label:"የሰቶች መፍጠር",descr:"Run a mile a day!"},
             {ref:"WOMENS DISTRIBUTORS",label:"የሰቶች ሥርጭት",descr:"Do not drive to work! Bike or take bus/train."},
             {ref:"MEN",label:"የወንዶች ልብስ",descr:"No more coffee!"},
             {ref:"CHILDREN",label:"ልጆች",descr:"Limit facebook usage to 15 minutes per day!"},
-            {ref:"ACCESSORIES",label:"ቪክቶሪያ ሲክረት",descr:"Read an hour a day!"},
+/*            {ref:"ACCESSORIES",label:"ቪክቶሪያ ሲክረት",descr:"Read an hour a day!"}, */
             {ref:"HANDBAGS",label:"የእጅ  ቦርሳ",descr:"This one is a bonus. Start cooking!"},
             {ref:"FOOTWEAR",label:"ቻማ",descr:"This one is a bonus. Start cooking!"}
         ];
