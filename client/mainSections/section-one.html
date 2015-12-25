@@ -1,0 +1,75 @@
+<template name="sectionOne">
+    <section class="clearfix">
+        <div class="module-hero">
+            <div class="module-hero-img">
+                <ul>
+                    {{#if tabToShow "contemp"}}
+                        {{>galleries tab="contempo"}}
+                    {{else}}
+                        {{#if tabToShow "theEdge"}}
+                            {{>galleries tab="theEdge"}}
+                        {{else}}
+                            {{>galleries tab="sp"}}
+                        {{/if}}
+                    {{/if}}
+                </ul>
+            </div>
+            {{#if tabToShow "contemp"}}
+                {{>sectionTabs tab="contempo"}}
+            {{else}}
+                {{#if tabToShow "theEdge"}}
+                    {{>sectionTabs tab="theEdge"}}
+                {{else}}
+                    {{>sectionTabs tab="sp"}}
+                {{/if}}
+            {{/if}}
+        </div>
+    </section>
+</template>
+
+<template name="gal">
+    <li>
+        <a href="{{href}}" title="{{title}}">
+            <img class="{{class}}" src="{{src}}" alt="{{title}}">
+        </a>
+    </li>
+</template>
+
+<template name="galleries">
+    <li>
+        <div class="hero-banner-hp template-hero-ad center-tmp clearfix" style="background-image: url({{gallery.bgsrc}});">
+            <div class="template-hero-ad-container clearfix">
+                <div class="template-hero-ad-container-gallery">
+                    <div class="template-hero-ad-container-gallery-container">
+                        <div class="template-hero-ad-gallery">
+                            <ul class='clearfix'>
+                                {{#each gallery.gal}}
+                                    {{>gal}}
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <div class="level-one-hero-ads-text index-partial desktop-hide">
+                            <div>
+                                <a href="{{gallery.bghref}}">
+                                    <img src="{{gallery.bgsrc2}}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+</template>
+
+
+
+<template name="sectionTabs">
+    <div class="module-hero-bottom">
+        <ul>
+            {{#each tab}}
+                <li class="{{activeClass}}" style="{{activeColor}}">●</li>
+            {{/each}}
+        </ul>
+    </div>
+</template>

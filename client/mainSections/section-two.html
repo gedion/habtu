@@ -1,0 +1,76 @@
+<template name="sectionTwoGal">
+    <div class="whats-new-index-topheader clearfix">
+        <h5>What's new from: <a href="/lovein"><span>{{gallery.newFromLabel}}</span></a></h5>
+        <a href="/lovein">
+            <img src="{{gallery.newFromLogo}}" alt="">
+        </a>
+    </div>
+    <div class="whats-new-index-gallery clearfix">
+       <ul class="clearfix">
+        {{#each gallery.gal}}
+            {{>gal}}
+        {{/each}}
+        </ul>
+    </div>
+</template>
+<template name="sectionTwo">
+    <section class="clearfix">
+        <div class="whats-new-index">
+            <div class="whats-new-index-container">
+                {{#if tabToShow "contemp"}}
+                    {{>sectionTwoGal tab="contempo"}}
+                {{else}}
+                    {{#if tabToShow "theEdge"}}
+                        {{>sectionTwoGal tab="theEdge"}}
+                    {{else}}
+                        {{>sectionTwoGal tab="sp"}}
+                    {{/if}}
+                {{/if}}
+
+                {{> buyFromTheSource}}
+
+            </div>
+        </div>
+        {{> vendorOfTheDay}}
+    </section>
+</template>
+
+<template name="buyFromTheSource">
+    <div class="whats-new-index-text">
+        <h2>Buy From the Source!</h2>
+        <p>
+            Buy factory direct! Find the lowest prices on wholesale apparel by shopping straight from the manufacturer.
+        </p>
+    </div>
+</template>
+
+<template name="vendorOfTheDay">
+    <div class="vendor-day-square-ad-module-first">
+        <div class="vendor-day-square-ad-module-first-top">
+            <h2>Vendor of the day</h2>
+            <span>Sponsored By</span>
+            <p><a href="/landb">L &amp; B</a></p>
+        </div>
+
+        <div class="vendor-day-square-ad-module-first-images clearfix">
+            <ul style="height: 304.907px;">
+                <li>
+                    <a href="/landb/item/2311" title="LB016"><img class="vendor-day-square-ad-module-mid-1" src="http://placehold.it/200x300" alt="LB016"></a>
+                </li>
+                <li>
+                    <a href="/landb/item/2311" title="LB016"><img class="vendor-day-square-ad-module-mid-1" src="http://placehold.it/200x300" alt="LB016"></a>
+                </li>
+                <li>
+                    <a href="/landb/item/2311" title="LB016"><img class="vendor-day-square-ad-module-mid-1" src="http://placehold.it/200x300" alt="LB016"></a>
+                </li>
+                <li>
+                    <a href="/landb/item/2311" title="LB016"><img class="vendor-day-square-ad-module-mid-1" src="http://placehold.it/200x300" alt="LB016"></a>
+                </li>
+                <li>
+                    <a href="/landb/item/2311" title="LB016"><img class="vendor-day-square-ad-module-mid-1" src="http://placehold.it/200x300" alt="LB016"></a>
+                </li>
+             </ul>
+        </div>
+
+    </div>
+</template>
