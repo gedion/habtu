@@ -1,3 +1,5 @@
+Session.set('tabToShow', 'contemp');
+
 var tabToShow = function(tab) {
         return Session.get('tabToShow') == tab;
 }
@@ -10,9 +12,9 @@ Template.sectionTwo.helpers({ tabToShow:tabToShow });
 Template.mainTabs.helpers({
     mainTab: function() {
         return [
-            {label:"ኮንተምፖራሪ", class:"contempo-tab"},
+            {label:"ኮንተምፖራሪ", class:"contempo-tab", active:"tab-home-page-active-1"},
             {label:"ምርት", class:"the-edge-tab"},
-            {label:"ኤስፒ", class:"sp-tab", active:"tab-home-page-active-1"}
+            {label:"ኤስፒ", class:"sp-tab"}
         ];
     }
 });

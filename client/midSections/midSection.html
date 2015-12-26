@@ -2,7 +2,11 @@
     <div class="las-default-wrap page-bottom-padding center clear">
         <div class="index-home clearfix" style="display: block;">
            {{> midSectionOne }}
+           {{> midSectionTwo }}
+           {{> midSectionThree }}
+           {{> midSectionFour }}
         </div>
+        {{> midSectionFive}}
     </div>
 </template>
 
@@ -20,8 +24,11 @@
 
 <template name="newestMembersGallery">
     <ul class="clearfix">
-    {{#each gallery}}
+    {{#each gallery.gal}}
         <li>
+         {{#if isSectionStockGuar isSectionStockGuar=gal.isSectionStockGuar}}
+            <img class="flag-img" src="//media.scdn4.secure.raxcdn.com/images/icon/s-guarantee.png">
+         {{/if}}
           <a title="ST550-P0226" href="/colorbear/item/430">
             <img alt="ST550-P0226" src="{{src}}">
           </a>
@@ -29,6 +36,8 @@
             <span><a target="_blank" href="/colorbear">Color Bear</a></span>
             <br>
             <a target="_blank" href="/colorbear/item/430">#ST550-P0226</a>
+          {{gallery.isSectionStockGuar}}
+          {{ ../gallery.isSectionStockGuar}}
           </p>
         </li>
     {{/each}}
@@ -41,7 +50,7 @@
         <div class="newest-member-index-box">
             <div class="newest-member-index-header">
                 <p class="module-titles white">Newest Members</p>
-                   {{>newestMembers}} 
+                   {{>newestMembers}}
             </div>
             <div class="newest-member-index-main-content" style="">
                 <div class="newest-member-index-main-content-container">
@@ -59,4 +68,172 @@
          </div>
       </div>
   </section>
+</template>
+
+<template name="midSectionTwo">
+    <section class="clearfix">
+        <div class="buyers-club">
+          <div class="buyers-club-container center clearfix">
+            <div class="buyers-club-module clearfix">
+              <div class="buyers-club-module-header">
+                <p class="module-titles">The Rewards Network</p>
+              </div>
+              <div class="buyers-club-logo">
+                <img src="http://placehold.it/100x80" alt="">
+              </div>
+              <div class="buyers-club-title">
+                <p>Shop within our network of rewards providers to earn discounts towards future purchases.</p>
+              </div>
+              <ul>
+                  <li class="">●</li>
+                  <li class="active-color" style="color: rgb(157, 3, 115);">●</li>
+                  <li class="">●</li>
+                  <li class="">●</li>
+              </ul>
+              <div class="buyers-club-module-main-content">
+                <div class="buyers-club-module-main-content-container">
+                  <h5>FEATURING: <span><a href="/musthave">Must Have</a> (1%)</span></h5>
+                  <div class="buyers-club-module-main-content-gallery clearfix">
+                       {{> newestMembersGallery}}
+                  </div>
+                </div>
+              </div>
+              <div class="buyers-club-bottom">
+                <p><a href="/services/buyer-rewards-participants" class="rewards-participate-click">Click Here to View Full List of Participants</a></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+</template>
+
+<template name="midSectionThree">
+    <section class="clearfix">
+        <div class="stock-guaranteed-module">
+          <div class="stock-guaranteed-container">
+            <div class="stock-guaranteed-text">
+                <p class="module-titles">Stock Guaranteed</p>
+            </div>
+            <div class="stock-guaranteed-title">
+              <p>Available for immediate purchase, all products displayed here are guaranteed in stock now.</p>
+            </div>
+            <div class="stock-guaranteed-gallery">
+                {{> newestMembersGallery isSectionStockGuar=true}}
+            </div>
+          </div>
+        </div>
+    </section>
+</template>
+
+
+<template name="midSectionFour">
+    <section class="clearfix">
+          <div class="level-one-square-ad-module-first module-five-first">
+            <div class="level-one-square-ad-module-first-top">
+              <h2>The Latest Trends</h2>
+              <p><strong>&nbsp;</strong></p>
+            </div>
+
+            <div class="level-one-square-ad-module-first-images clearfix">
+              <ul style="height: 253.773px;">
+                    {{#each galleryLatestTrends.gal}}
+                        {{>gal}}
+                    {{/each}}
+              </ul>
+            </div>
+
+            <div class="level-one-square-ad-module-first-bottom">
+              <span>Sponsored By</span>
+              <p><a href="/geegee">GeeGee</a></p>
+              <div>
+                <a href="/geegee"><p>Shop GeeGee <img src="//media.scdn4.secure.raxcdn.com/images/icon/right-arrow.png" alt=""></p></a>
+              </div>
+            </div>
+          </div>
+          <div class="level-one-square-ad-module-second module-five-second">
+            <div class="level-one-square-ad-module-second-top">
+              <h2>Fresh Picks</h2>
+              <p>By <a href="/mileyandmolly">MILEY AND MOLLY</a></p>
+            </div>
+
+            <div class="level-one-square-ad-module-second-images clearfix">
+              <ul class="clearfix">
+                    {{#each galleryFreshPicks.gal}}
+                        {{>gal}}
+                    {{/each}}
+              </ul>
+              <ul class="clearfix">
+                    {{#each galleryFreshPicks.gal}}
+                        {{>gal}}
+                    {{/each}}
+              </ul>
+            </div>
+
+            <div class="level-one-square-ad-module-second-bottom">
+              <div>
+                <a href="/mileyandmolly"><p>Shop MILEY AND MOLLY <img src="//media.scdn4.secure.raxcdn.com/images/icon/right-arrow.png" alt=""></p></a>
+              </div>
+            </div>
+          </div>
+          <div class="level-one-square-ad-module-first module-five-third">
+            <div class="level-one-square-ad-module-first-top">
+              <h2>Wholesale Destination</h2>
+              <p><strong>&nbsp;</strong></p>
+            </div>
+
+            <div class="level-one-square-ad-module-first-images clearfix">
+              <ul style="height: 253.773px;">
+                    {{#each galleryLatestTrends.gal}}
+                        {{>gal}}
+                    {{/each}}
+              </ul>
+            </div>
+
+            <div class="level-one-square-ad-module-first-bottom">
+              <span>Sponsored By</span>
+              <p><a href="/hellomiz">Hello Miz</a></p>
+              <div>
+                <a href="/hellomiz"><p>Shop Hello Miz <img src="//media.scdn4.secure.raxcdn.com/images/icon/right-arrow.png" alt=""></p></a>
+              </div>
+            </div>
+          </div>
+    </section>
+</template>
+
+<template name="midSectionFive">
+    <section class="clearfix">
+        <div class="module-eight">
+          <div class="module-eight-text">
+            <span class="module-eight-text-logo"></span>
+            <div class="module-eight-text-content">
+              <h1>LA Showroom The Original Fashion Marketplace</h1>
+              <p>We are a wholesale fashion marketplace, offering a convenient B2B experience to discerning buyers. Located in the heart of the Los Angeles fashion District in California, LA Showroom provides access to the biggest selection of wholesale fashion clothing. We feature an ever-expanding array of women's and men's clothing, footwear, handbags, accessories, kid's clothes and much more. Browse the latest styles from top apparel manufacturers and distributors, and discover the newest fashion trends. Our free registration allows access to not only thousands of styles, but to benefits such as our buyer rewards program, private label and order consolidation services, and much more.
+              </p>
+            </div>
+          </div>
+            {{> socialMedia }}
+          <div class="module-eight-member center">
+            <div class="module-eight-box">
+              <a href="/become-a-member" title="Join LA Showroom Today!">
+                Join LA Showroom Today!
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="module-eight-box-outside">
+          <a href="/become-a-member"><input type="button" value="Join LA Showroom Today!"></a>
+        </div>
+      </section>
+</template>
+
+
+<template name="socialMedia">
+    <div class="module-eight-social">
+    {{#each link}}
+        <a href="{{href}}" rel="external" title="{{title}}">
+          <span class="{{class}}"></span>
+        </a>
+    {{/each}}
+    </div>
 </template>
