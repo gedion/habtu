@@ -11,3 +11,4 @@ iron:router
 mrt:chartjs
 aslagle:reactive-table
 mizzao:bootstrap-3
+chrismbeckett:toastr

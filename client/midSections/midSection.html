@@ -15,14 +15,14 @@
     <ul>
     {{#each logo}}
         <li>
-          <img src="{{src}}">
+          <img data-id="{_id}}" src="{{src}}">
           <div class="triangle-place-holder"></div>
         </li>
     {{/each}}
     </ul>
 </template>
 
-<template name="newestMembersGallery">
+<template name="midGalleries">
     <ul class="clearfix">
     {{#each gallery.gal}}
         <li>
@@ -30,7 +30,7 @@
             <img class="flag-img" src="//media.scdn4.secure.raxcdn.com/images/icon/s-guarantee.png">
          {{/if}}
           <a title="ST550-P0226" href="/colorbear/item/430">
-            <img alt="ST550-P0226" src="{{src}}">
+            <img data-id="{{_id}}" src="{{src}}">
           </a>
           <p>
             <span><a target="_blank" href="/colorbear">Color Bear</a></span>
@@ -61,7 +61,7 @@
                   </div>
 
                   <div class="newest-member-index-gallery clearfix">
-                       {{> newestMembersGallery}}
+                       {{>midGalleries type="newestMembersGallery"}}
                   </div>
                 </div>
             </div>
@@ -94,7 +94,7 @@
                 <div class="buyers-club-module-main-content-container">
                   <h5>FEATURING: <span><a href="/musthave">Must Have</a> (1%)</span></h5>
                   <div class="buyers-club-module-main-content-gallery clearfix">
-                       {{> newestMembersGallery}}
+                       {{>midGalleries type='rewards'}}
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@
               <p>Available for immediate purchase, all products displayed here are guaranteed in stock now.</p>
             </div>
             <div class="stock-guaranteed-gallery">
-                {{> newestMembersGallery isSectionStockGuar=true}}
+                {{>midGalleries isSectionStockGuar=true type='stockGuar'}}
             </div>
           </div>
         </div>
@@ -127,6 +127,20 @@
 </template>
 
 
+<template name="midSectionFourGals">
+    <ul class="clearfix">
+        {{#each midSectionFourGals.gal}}
+            {{>gal}}
+        {{/each}}
+    </ul>
+</template>
+<template name="midSectionFourGalsTrendsAndWholeSale">
+    <ul style="height: 253.773px;">
+        {{#each latestAndwholeSale.gal}}
+            {{>gal}}
+        {{/each}}
+   </ul>
+</template>
 <template name="midSectionFour">
     <section class="clearfix">
           <div class="level-one-square-ad-module-first module-five-first">
@@ -136,11 +150,7 @@
             </div>
 
             <div class="level-one-square-ad-module-first-images clearfix">
-              <ul style="height: 253.773px;">
-                    {{#each galleryLatestTrends.gal}}
-                        {{>gal}}
-                    {{/each}}
-              </ul>
+                    {{>midSectionFourGalsTrendsAndWholeSale type="galleryLatestTrends"}}
             </div>
 
             <div class="level-one-square-ad-module-first-bottom">
@@ -158,16 +168,8 @@
             </div>
 
             <div class="level-one-square-ad-module-second-images clearfix">
-              <ul class="clearfix">
-                    {{#each galleryFreshPicks.gal}}
-                        {{>gal}}
-                    {{/each}}
-              </ul>
-              <ul class="clearfix">
-                    {{#each galleryFreshPicks.gal}}
-                        {{>gal}}
-                    {{/each}}
-              </ul>
+                    {{> midSectionFourGals type="galleryFreshPicksTop"}}
+                    {{> midSectionFourGals type="galleryFreshPicksBottom"}}
             </div>
 
             <div class="level-one-square-ad-module-second-bottom">
@@ -183,11 +185,7 @@
             </div>
 
             <div class="level-one-square-ad-module-first-images clearfix">
-              <ul style="height: 253.773px;">
-                    {{#each galleryLatestTrends.gal}}
-                        {{>gal}}
-                    {{/each}}
-              </ul>
+                    {{>midSectionFourGalsTrendsAndWholeSale type="wholesale"}}
             </div>
 
             <div class="level-one-square-ad-module-first-bottom">
@@ -226,7 +224,6 @@
         </div>
       </section>
 </template>
-
 
 <template name="socialMedia">
     <div class="module-eight-social">

@@ -30,7 +30,7 @@
 <template name="gal">
     <li>
         <a href="{{href}}" title="{{title}}">
-            <img class="{{class}}" src="{{src}}" alt="{{title}}">
+            <img data-id='{{_id}}' class="{{class}}" src="{{src}}" alt="{{title}}">
         </a>
     </li>
 </template>
@@ -61,8 +61,6 @@
         </div>
     </li>
 </template>
-
-
 
 <template name="sectionTabs">
     <div class="module-hero-bottom">

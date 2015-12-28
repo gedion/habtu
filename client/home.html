@@ -1,32 +1,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Show Room</title>
+    <title></title>
     <link href="https://www.lashowroom.com/dist/css/lashowroom.min.css?d41d8cd98f00b204e9800998ecf8427e" rel="stylesheet" type="text/css">
 </head>
 
 <template name="main">
 {{>header}}
     <main>
-        <!-- Home Page Advertisements -->
-        <div class="home-page-ad-inc clear" style="display: block;">
-            {{>mainTabs}}
-            <div class="clearfix page-top-bottom-padding tab-target tab-target-1" id="hp_tab_ad_1">
-                <div class="las-default-wrap center">
-                    <!-- Hero Image hp -->
-                    {{>sectionOne}}
-                    <!-- End hero Image hp -->
-
-
-                    <!-- First module; What's New + Vendor Day-->
-                   {{> sectionTwo}}
-                </div>
-            </div>
-        </div>
-        <div class="spinner" style="display: none;"></div>
+        {{> topSections}}
         {{> midSections}}
     </main>
     {{>footer}}
+</template>
+
+<template name="topSections">
+    <div class="home-page-ad-inc clear" style="display: block;">
+        {{>mainTabs}}
+        <div class="clearfix page-top-bottom-padding tab-target tab-target-1" id="hp_tab_ad_1">
+            <div class="las-default-wrap center">
+               {{>sectionOne}}
+               {{>sectionTwo}}
+            </div>
+        </div>
+    </div>
+    <div class="spinner" style="display: none;"></div>
 </template>
 
 <template name="mainTabs">
@@ -36,3 +34,4 @@
         {{/each}}
     </div>
 </template>
+

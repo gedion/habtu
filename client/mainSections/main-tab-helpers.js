@@ -1,8 +1,3 @@
-
-
-
-///section tabs
-
 Template.sectionTabs.helpers({
     tab: function() {
         tabs = {

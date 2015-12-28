@@ -58,11 +58,6 @@ function updateEdgeTab(e){
     tabContent.removeClass('tab-target-3');
     tabContent.addClass('tab-target-'+tabIndex);
 }
-/*
-"https://media.scdn4.secure.raxcdn.com/logo/8/logo8_freeloader.png"
-"https://media.scdn4.secure.raxcdn.com/logo/8/logo8_boomboom.png"
-"https://media.scdn4.secure.raxcdn.com/logo/8/logo8_tashaapparel.png"
-*/
 
 gallery = function() {
         var subTabIndex = Session.get('subTabToShow') || 0;

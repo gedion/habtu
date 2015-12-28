@@ -1,79 +1,39 @@
-
 Template.newestMembers.helpers({
     logo: function() {
-        return [
-            {src:"http://placehold.it/178x106"},
-            {src:"http://placehold.it/178x106"},
-            {src:"http://placehold.it/178x106"},
-            {src:"http://placehold.it/178x106"},
-            {src:"http://placehold.it/178x106"},
-            {src:"http://placehold.it/178x106"},
-            {src:"http://placehold.it/178x106"},
-            {src:"http://placehold.it/178x106"}
-        ];
+        return Galleries.find({type:'newestMembers'});
     }
 });
 
-Template.newestMembersGallery.helpers({
+Template.midGalleries.helpers({
     gallery: function() {
-        return {
-          gal:  [
-                    {src:"http://placehold.it/150x225", isSectionStockGuar: this.isSectionStockGuar},
-                    {src:"http://placehold.it/150x225", isSectionStockGuar: this.isSectionStockGuar},
-                    {src:"http://placehold.it/150x225", isSectionStockGuar: this.isSectionStockGuar},
-                    {src:"http://placehold.it/150x225", isSectionStockGuar: this.isSectionStockGuar},
-                    {src:"http://placehold.it/150x225", isSectionStockGuar: this.isSectionStockGuar},
-                    {src:"http://placehold.it/150x225", isSectionStockGuar: this.isSectionStockGuar},
-                    {src:"http://placehold.it/150x225", isSectionStockGuar: this.isSectionStockGuar}
-                ],
-        };
-    }
-});
-
-Template.socialMedia.helpers({
-    link: function() {
-        return [
-                    {href:"//www.facebook.com/", title:'Find Us On Facebook', class:'module-eight-social-fb'},
-                    {href:"//twitter.com/", title:'Follow Us On Twitter', class:'module-eight-social-twitter'},
-                    {href:"//www.pinterest.com/", title:'Find Us On Pinterest"', class:'module-eight-social-pt'},
-                    {href:"//plus.google.com/", title:'Find us on Google', class:'module-eight-social-google'},
-                    {href:"//instagram.com/", title:'Find us on Instagram', class:'module-eight-social-instagram'},
-                    {href:"//www.linkedin.com", title:'Follow us on LinkedIn', class:'module-eight-social-linkedin'}
-                ];
-    }
-});
-
-Template.midSectionFour.helpers({
-   galleryLatestTrends: function() {
-        return {
-          gal:  [
-                    {src:"http://placehold.it/150x225", class:"level-one-square-ad-module-mid-1"},
-                    {src:"http://placehold.it/150x225", class:"level-one-square-ad-module-mid-2"},
-                    {src:"http://placehold.it/150x225", class:"level-one-square-ad-module-mid-3"},
-                    {src:"http://placehold.it/150x225", class:"level-one-square-ad-module-mid-4"}
-                ],
-        };
+        gals = Galleries.find({type:this.type}, {sort: {sortorder:1}}).fetch();
+        for(var i = 0; i < gals.length;i++) {
+            gals[i]['isSectionStockGuar'] = this.isSectionStockGuar;
+        }
+        return { gal: gals };
     },
-    galleryFreshPicks: function() {
-        return {
-          gal:  [
-                    {src:"http://placehold.it/100x165"},
-                    {src:"http://placehold.it/100x165"},
-                    {src:"http://placehold.it/100x165"}
-                ],
-        };
+    isSectionStockGuar  : function() {
+            return this. isSectionStockGuar;
+    }
+});
+
+Template.midSectionFourGals.helpers({
+   midSectionFourGals: function() {
+        return { gal:Galleries.find({type:this.type}, {sort: {sortorder:1}})};
+   }
+});
+Template.midSectionFourGalsTrendsAndWholeSale.helpers({
+    latestAndwholeSale: function() {
+        gals = Galleries.find({type:this.type}, {sort: {sortorder:1}}).fetch();
+        for(var i = 0; i < gals.length;i++){
+            gals[i]['class'] = 'level-one-square-ad-module-mid-'+(i + 1);
+        }
+        return { gal: gals };
     }
 });
 var tabToShow = function(tab) {
         return Session.get('tabToShow') == tab;
 }
-
-Template.newestMembersGallery.helpers({
-    isSectionStockGuar  : function() {
-            return this. isSectionStockGuar;
-    }
-
-});
 
 Template.midSectionTwo.events({
   'click .buyers-club-module ul li':function(e){
@@ -92,3 +52,15 @@ function updateMidSectionTwoTabs(el){
     el.css("color", "rgb(157, 3, 115)");
 
 }
+Template.socialMedia.helpers({
+    link: function() {
+        return [
+                    {href:"//www.facebook.com/", title:'Find Us On Facebook', class:'module-eight-social-fb'},
+                    {href:"//twitter.com/", title:'Follow Us On Twitter', class:'module-eight-social-twitter'},
+                    {href:"//www.pinterest.com/", title:'Find Us On Pinterest"', class:'module-eight-social-pt'},
+                    {href:"//plus.google.com/", title:'Find us on Google', class:'module-eight-social-google'},
+                    {href:"//instagram.com/", title:'Find us on Instagram', class:'module-eight-social-instagram'},
+                    {href:"//www.linkedin.com", title:'Follow us on LinkedIn', class:'module-eight-social-linkedin'}
+                ];
+    }
+});
