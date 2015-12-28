@@ -10,12 +10,11 @@
     </div>
 </template>
 
-
 <template name="newestMembers">
     <ul>
     {{#each logo}}
         <li>
-          <img data-id="{_id}}" src="{{src}}">
+          <img data-id="{{_id}}" src="{{src}}">
           <div class="triangle-place-holder"></div>
         </li>
     {{/each}}

@@ -1,5 +1,6 @@
 Template.main.events({
   'click img ':function(e) {
+        toastr.clear();
         var imgEl = $(e.target);
         toastr.options = {
           "closeButton": true,
@@ -40,7 +41,7 @@ Template.main.events({
             reader.readAsDataURL(file);
             toastr.clear();
         });
-  },
+  }
 
 });
 

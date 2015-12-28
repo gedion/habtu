@@ -1,13 +1,19 @@
+
+<template name="whatsNewFrom">
+    {{#each gal}}
+        <div class="whats-new-index-topheader clearfix">
+            <h5>What's new from: <a href="/lovein"><span data-id="{{_id}}" >{{newFromLabel}}</span></a></h5>
+            <a href="/lovein">
+                <img data-id="{{_id}}" src="{{newFromLogo}}" alt="">
+            </a>
+        </div>
+    {{/each}}
+</template>
 <template name="sectionTwoGal">
-    <div class="whats-new-index-topheader clearfix">
-        <h5>What's new from: <a href="/lovein"><span>{{gallery.newFromLabel}}</span></a></h5>
-        <a href="/lovein">
-            <img src="{{gallery.newFromLogo}}" alt="">
-        </a>
-    </div>
+    {{>whatsNewFrom}}
     <div class="whats-new-index-gallery clearfix">
        <ul class="clearfix">
-        {{#each gallery.gal}}
+        {{#each gallery}}
             {{>gal}}
         {{/each}}
         </ul>

@@ -29,7 +29,7 @@ Template.mainTabs.events({
         updateEdgeTab(e);
    },
   'click .sp-tab':function(e){
-        Session.set('tabToShow', 'sb');
+        Session.set('tabToShow', 'sp');
         updateEdgeTab(e);
    }
 });
@@ -59,73 +59,31 @@ function updateEdgeTab(e){
     tabContent.addClass('tab-target-'+tabIndex);
 }
 
-gallery = function() {
+Template.whatsNewFrom.helpers({
+    gal: function(){
         var subTabIndex = Session.get('subTabToShow') || 0;
-        var images = {
-                         "contempo":
-                                 [{
-                                     newFromLabel:"Boom Boom",
-                                     newFromLogo: 'http://placehold.it/240x60',
-                                     bgsrc: '//media.scdn4.secure.raxcdn.com/9/spot/bg/2015/iris_1230-420_20151224115323.jpg',
-                                     bghref: '/entro',
-                                     bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
-                                     gal: [{class: "image-1","src": "http://placehold.it/150x220"},{class: "image-2","src": "http://placehold.it/150x220"},{class: "image-3","src": "http://placehold.it/150x220"},{class: "image-4","src": "http://placehold.it/150x220"},{class: "image-5","src": "http://placehold.it/150x220"}]
-                                 },{
-                                     newFromLabel:"Boom Boom",
-                                     newFromLogo: 'http://placehold.it/240x60',
-                                     bgsrc: '//media.scdn4.secure.raxcdn.com/9/spot/bg/2015/koriamerica_1230-420_20151224120211.jpg',
-                                     bghref: '/entro',
-                                     bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
-                                     gal: [{class: "image-1","src": "http://placehold.it/150x220"},{class: "image-2","src": "http://placehold.it/150x220"},{class: "image-3","src": "http://placehold.it/150x220"},{class: "image-4","src": "http://placehold.it/150x220"},{class: "image-5","src": "http://placehold.it/150x220"}]
-                                 },{
-                                     newFromLabel:"Boom Boom",
-                                     newFromLogo: 'http://placehold.it/240x60',
-                                     bgsrc: '//media.scdn4.secure.raxcdn.com/9/spot/bg/2015/minxapparel_1230-420_20151224115157.jpg',
-                                     bghref: '/entro',
-                                     bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
-                                     gal: [{class: "image-1","src": "http://placehold.it/150x220"},{class: "image-2","src": "http://placehold.it/150x220"},{class: "image-3","src": "http://placehold.it/150x220"},{class: "image-4","src": "http://placehold.it/150x220"},{class: "image-5","src": "http://placehold.it/150x220"}]
-                                 },{
-                                     newFromLabel:"Boom Boom",
-                                     newFromLogo: 'http://placehold.it/240x60',
-                                     bgsrc: '//media.scdn4.secure.raxcdn.com/9/spot/bg/2015/hemandthread_1230-420_20151224123700.jpg',
-                                     bghref: '/entro',
-                                     bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
-                                     gal: [{class: "image-1","src": "http://placehold.it/150x220"},{class: "image-2","src": "http://placehold.it/150x220"},{class: "image-3","src": "http://placehold.it/150x220"},{class: "image-4","src": "http://placehold.it/150x220"},{class: "image-5","src": "http://placehold.it/150x220"}]
-                                 }
+        return Galleries.find({type:this.tab+'WhatsNew', tab:subTabIndex}, {sort: {sortorder:1}});
+    }
+});
 
+Template.gals.helpers({ gallery: function() {
+        var subTabIndex = Session.get('subTabToShow') || 0;
+        gals = Galleries.find({type:this.tab, tab:subTabIndex}, {sort: {sortorder:1}}).fetch();
+        for (var i = 0; i < gals.length;i++) {
+            gals[i]['class'] = 'image-'+(i + 1);
+        }
+        var galleries = {gal: gals};
+        gal2 = Galleries.find({type:this.tab+'WhatsNew', tab:subTabIndex}, {sort: {sortorder:1}}).fetch();
+        if (gal2.length == 1) {
+            for(var key in gal2[0]){
+                galleries[key] = gal2[0][key];
+            }
+        }
+        return galleries;
+    }
+});
 
-                                ],
-                         "theEdge":
-                                 [{
-                                     newFromLabel:"The Edge",
-                                     newFromLogo: 'http://placehold.it/240x60',
-                                     bgsrc: '//media.scdn4.secure.raxcdn.com/10/edge_right_3.jpg',
-                                     bghref: '/mitto',
-                                     bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_mitto.png',
-                                     gal: [{class: "image-1","src": "http://placehold.it/150x220"},{class: "image-2","src": "http://placehold.it/150x220"},{class: "image-3","src": "http://placehold.it/150x220"},{class: "image-4","src": "http://placehold.it/150x220"},{class: "image-5","src": "http://placehold.it/150x220"}]
-                                 },{
-                                     newFromLabel:"The Edge",
-                                     bgsrc: '//media.scdn4.secure.raxcdn.com/10/edge_right_2.jpg',
-                                     bghref: '/mitto',
-                                     bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_mitto.png',
-                                     gal: [{class: "image-1","src": "http://placehold.it/150x220"},{class: "image-2","src": "http://placehold.it/150x220"},{class: "image-3","src": "http://placehold.it/150x220"},{class: "image-4","src": "http://placehold.it/150x220"},{class: "image-5","src": "http://placehold.it/150x220"}]
-                                 }
-                                ],
-                         "sp":
-                                 [{
-                                     newFromLabel:"SP",
-                                     newFromLogo: 'http://placehold.it/240x60',
-                                     bgsrc: '//media.scdn4.secure.raxcdn.com/9/spot/bg/2015/julia_1230-420_20151211115802.jpg',
-                                     bghref: 'julia',
-                                     bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_julia.png',
-                                     gal: [{class: "image-1","src": "http://placehold.it/150x220"},{class: "image-2","src": "http://placehold.it/150x220"},{class: "image-3","src": "http://placehold.it/150x220"},{class: "image-4","src": "http://placehold.it/150x220"},{class: "image-5","src": "http://placehold.it/150x220"}]
-                                 }
-
-                                ]
-                     }
-
-                return images[this.tab][subTabIndex] || images[this.tab][0];
-       };
-
-Template.galleries.helpers({ gallery: gallery });
-Template.sectionTwoGal.helpers({ gallery: gallery });
+Template.sectionTwoGal.helpers({ gallery: function() {
+        return Galleries.find({type:this.tab, tab:-1}, {sort: {sortorder:1}});
+     }
+});

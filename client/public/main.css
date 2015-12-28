@@ -5,3 +5,7 @@
 .module-eight-text-logo {
     background: url(http://placehold.it/62x78/f00?text=LOGO) top left !important;
 }
+
+.toastr-file-upload-button {
+    color: black;
+}
