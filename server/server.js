@@ -1,5 +1,5 @@
 Meteor.startup(function() {
-    Galleries.remove({});
+//    Galleries.remove({});
     if (Galleries.findOne() === undefined) {
         gals = [
             {type:'newestMembers', src:"http://placehold.it/178x106", sortorder:1},

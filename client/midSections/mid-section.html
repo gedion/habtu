@@ -1,0 +1,32 @@
+<template name="midSections">
+    <div class="las-default-wrap page-bottom-padding center clear">
+        <div class="index-home clearfix" style="display: block;">
+           {{> midSectionOne }}
+           {{> midSectionTwo }}
+           {{> midSectionThree }}
+           {{> midSectionFour }}
+        </div>
+        {{> midSectionFive}}
+    </div>
+</template>
+
+
+<template name="midGalleries">
+    <ul class="clearfix">
+    {{#each gallery.gal}}
+        <li>
+         {{#if isSectionStockGuar isSectionStockGuar=gal.isSectionStockGuar}}
+            <img class="flag-img" src="//media.scdn4.secure.raxcdn.com/images/icon/s-guarantee.png">
+         {{/if}}
+          <a title="ST550-P0226" href="/colorbear/item/430"><img data-id="{{_id}}" src="{{src}}"></a>
+          <p>
+            <span><a target="_blank" href="/colorbear">Color Bear</a></span>
+            <br>
+            <a target="_blank" href="/colorbear/item/430">#ST550-P0226</a>
+          </p>
+        </li>
+    {{/each}}
+    </ul>
+</template>
+
+

@@ -14,24 +14,5 @@
     {{>footer}}
 </template>
 
-<template name="topSections">
-    <div class="home-page-ad-inc clear" style="display: block;">
-        {{>mainTabs}}
-        <div class="clearfix page-top-bottom-padding tab-target tab-target-1" id="hp_tab_ad_1">
-            <div class="las-default-wrap center">
-               {{>sectionOne}}
-               {{>sectionTwo}}
-            </div>
-        </div>
-    </div>
-    <div class="spinner" style="display: none;"></div>
-</template>
 
-<template name="mainTabs">
-    <div class="las-default-wrap center clearfix">
-        {{#each mainTab}}
-            <div class="tab-home-page {{active}}"><p class="{{class}}">{{label}}</p></div>
-        {{/each}}
-    </div>
-</template>
 

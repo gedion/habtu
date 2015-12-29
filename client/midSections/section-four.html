@@ -1,0 +1,71 @@
+<template name="midSectionFour">
+    <section class="clearfix">
+          <div class="level-one-square-ad-module-first module-five-first">
+            <div class="level-one-square-ad-module-first-top">
+              <h2>The Latest Trends</h2>
+              <p><strong>&nbsp;</strong></p>
+            </div>
+
+            <div class="level-one-square-ad-module-first-images clearfix">
+                    {{>midSectionFourGalsTrendsAndWholeSale type="galleryLatestTrends"}}
+            </div>
+
+            <div class="level-one-square-ad-module-first-bottom">
+              <span>Sponsored By</span>
+              <p><a href="/geegee">GeeGee</a></p>
+              <div>
+                <a href="/geegee"><p>Shop GeeGee <img src="//media.scdn4.secure.raxcdn.com/images/icon/right-arrow.png" alt=""></p></a>
+              </div>
+            </div>
+          </div>
+          <div class="level-one-square-ad-module-second module-five-second">
+            <div class="level-one-square-ad-module-second-top">
+              <h2>Fresh Picks</h2>
+              <p>By <a href="/mileyandmolly">MILEY AND MOLLY</a></p>
+            </div>
+
+            <div class="level-one-square-ad-module-second-images clearfix">
+                    {{> midSectionFourGals type="galleryFreshPicksTop"}}
+                    {{> midSectionFourGals type="galleryFreshPicksBottom"}}
+            </div>
+
+            <div class="level-one-square-ad-module-second-bottom">
+              <div>
+                <a href="/mileyandmolly"><p>Shop MILEY AND MOLLY <img src="//media.scdn4.secure.raxcdn.com/images/icon/right-arrow.png" alt=""></p></a>
+              </div>
+            </div>
+          </div>
+          <div class="level-one-square-ad-module-first module-five-third">
+            <div class="level-one-square-ad-module-first-top">
+              <h2>Wholesale Destination</h2>
+              <p><strong>&nbsp;</strong></p>
+            </div>
+
+            <div class="level-one-square-ad-module-first-images clearfix">
+                    {{>midSectionFourGalsTrendsAndWholeSale type="wholesale"}}
+            </div>
+
+            <div class="level-one-square-ad-module-first-bottom">
+              <span>Sponsored By</span>
+              <p><a href="/hellomiz">Hello Miz</a></p>
+              <div>
+                <a href="/hellomiz"><p>Shop Hello Miz <img src="//media.scdn4.secure.raxcdn.com/images/icon/right-arrow.png" alt=""></p></a>
+              </div>
+            </div>
+          </div>
+    </section>
+</template>
+<template name="midSectionFourGals">
+    <ul class="clearfix">
+        {{#each midSectionFourGals.gal}}
+            {{>gal}}
+        {{/each}}
+    </ul>
+</template>
+<template name="midSectionFourGalsTrendsAndWholeSale">
+    <ul style="height: 253.773px;">
+        {{#each latestAndwholeSale.gal}}
+            {{>gal}}
+        {{/each}}
+   </ul>
+</template>

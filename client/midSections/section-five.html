@@ -1,0 +1,35 @@
+<template name="midSectionFive">
+    <section class="clearfix">
+        <div class="module-eight">
+          <div class="module-eight-text">
+            <span class="module-eight-text-logo"></span>
+            <div class="module-eight-text-content">
+              <h1>LA Showroom The Original Fashion Marketplace</h1>
+              <p>We are a wholesale fashion marketplace, offering a convenient B2B experience to discerning buyers. Located in the heart of the Los Angeles fashion District in California, LA Showroom provides access to the biggest selection of wholesale fashion clothing. We feature an ever-expanding array of women's and men's clothing, footwear, handbags, accessories, kid's clothes and much more. Browse the latest styles from top apparel manufacturers and distributors, and discover the newest fashion trends. Our free registration allows access to not only thousands of styles, but to benefits such as our buyer rewards program, private label and order consolidation services, and much more.
+              </p>
+            </div>
+          </div>
+            {{> socialMedia }}
+          <div class="module-eight-member center">
+            <div class="module-eight-box">
+              <a href="/become-a-member" title="Join LA Showroom Today!">
+                Join LA Showroom Today!
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="module-eight-box-outside">
+          <a href="/become-a-member"><input type="button" value="Join LA Showroom Today!"></a>
+        </div>
+      </section>
+</template>
+
+<template name="socialMedia">
+    <div class="module-eight-social">
+    {{#each link}}
+        <a href="{{href}}" rel="external" title="{{title}}">
+          <span class="{{class}}"></span>
+        </a>
+    {{/each}}
+    </div>
+</template>

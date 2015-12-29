@@ -4,12 +4,12 @@
             <div class="module-hero-img">
                 <ul>
                     {{#if tabToShow "contemp"}}
-                        {{>gals tab="contempo"}}
+                        {{>galleries tab="contempo"}}
                     {{else}}
                         {{#if tabToShow "theEdge"}}
-                            {{>gals tab="theEdge"}}
+                            {{>galleries tab="theEdge"}}
                         {{else}}
-                            {{>gals tab="sp"}}
+                            {{>galleries tab="sp"}}
                         {{/if}}
                     {{/if}}
                 </ul>
@@ -29,13 +29,11 @@
 
 <template name="gal">
     <li>
-        <a href="{{href}}" title="{{title}}">
-            <img data-id='{{_id}}' class="{{class}}" src="{{src}}" alt="{{title}}">
-        </a>
+        <a href="{{href}}" title="{{title}}"><img data-id='{{_id}}' class="{{class}}" src="{{src}}" alt="{{title}}"></a>
     </li>
 </template>
 
-<template name="gals">
+<template name="galleries">
     <li>
         <div data-id="{{gallery._id}}" class="hero-banner-hp template-hero-ad center-tmp clearfix" style="background-image: url({{gallery.bgsrc}});">
             <div class="template-hero-ad-container clearfix">
@@ -50,9 +48,7 @@
                         </div>
                         <div class="level-one-hero-ads-text index-partial desktop-hide">
                             <div>
-                                <a href="">
-                                    <img data-id="{{gallery._id}}" src="{{gallery.bgsrc2}}" alt="">
-                                </a>
+                                <a href=""><img data-id="{{gallery._id}}" src="{{gallery.bgsrc2}}" alt=""></a>
                             </div>
                         </div>
                     </div>
