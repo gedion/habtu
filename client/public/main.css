@@ -9,3 +9,13 @@
 .toastr-file-upload-button {
     color: black;
 }
+
+.level-one-square-ad-module-first-bottom > div > .cr-note , 
+.level-one-square-ad-module-second-bottom > div > .cr-note  {
+    color: #fff;
+    font-family: "Open Sans";
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 43px;
+    text-transform: uppercase;
+}

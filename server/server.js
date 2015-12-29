@@ -1,5 +1,31 @@
 Meteor.startup(function() {
-//    Galleries.remove({});
+    Content.remove({});
+    var content = Content.findOne();
+    if(content == null) {
+       var  contents = [
+                    {note: 'Header 0', tag: 'mod-0-header'},
+                    {note: 'Header 1', tag: 'mod-1-header'},
+                    {note: 'Header 2', tag: 'mod-2-header'},
+                    {note: 'Header 3', tag: 'mod-3-header'},
+                    {note: 'On Sale!', tag: 'mod-stockg-header'},
+                    {note: 'Rewards!', tag: 'mod-rewards-header'},
+                    {note: 'body 0', tag: 'mod-0-body'},
+                    {note: 'body 1', tag: 'mod-1-body'},
+                    {note: 'body 2', tag: 'mod-2-body'},
+                    {note: 'body 3', tag: 'mod-3-body'},
+                    {note: 'body 3', tag: 'mod-stockg-body'},
+                    {note: 'get rewards', tag: 'mod-rewards-body'},
+                    {note: 'footer 0', tag: 'mod-0-footer'},
+                    {note: 'footer 1', tag: 'mod-1-footer'},
+                    {note: 'footer 2', tag: 'mod-2-footer'},
+                    {note: 'footer 3', tag: 'mod-3-footer'}
+        ];
+
+        for(var i = 0;i< contents.length;i++){
+            Content.insert(contents[i]);
+        }
+    }
+
     if (Galleries.findOne() === undefined) {
         gals = [
             {type:'newestMembers', src:"http://placehold.it/178x106", sortorder:1},
