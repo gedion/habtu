@@ -1,80 +1,65 @@
 <template name="header">
     <header id="site-header">
 <div class="clear">
-                    <div class="main-logo">
-                        <a href="/"><img alt="LAShow room Logo" src="http://placehold.it/62x78/f00?text=LOGO"></a>
-                    </div>
-                    <div role="navigation" class="top-menu">
-                        <!-- Log-in Function -->
-                        <div class="login-module">
-                            <a href="/login" id="notLogged">ግባ</a> / <a href="/register">ተመዘገበ</a>
-                        </div>
-                        <!-- End Log-in Function -->
+    <div class="main-logo">
+        <a href="/"><img alt="LAShow room Logo" src="http://placehold.it/62x78/f00?text=LOGO"></a>
+    </div>
+    <div role="navigation" class="top-menu">
+        <!-- Log-in Function -->
+        <div class="login-module">
+            <a href="/login" id="notLogged">ግባ</a> / <a href="/register">ተመዘገበ</a>
+        </div>  
+        <!-- End Log-in Function -->
 
-                        <div class="icon-menu">
-                            <ul>
+        <div class="icon-menu">
+            <ul>
+                {{>language}} 
 
-                                <li><a data-tooltip="My Store Favorites" class="faves" href="/account/store-faves" oldtitle="My Store Faves" title=""><img alt="My Fave Stores" src="//media.scdn4.secure.raxcdn.com/icon-header/fave-store.png"></a></li>
-                                <li><a title="Collapsed Menu" class="menu" href="#menu" id="collapsed_link"><img alt="Responsive Menu" src="//media.scdn4.secure.raxcdn.com/icon-header/menu.png"></a></li>
-                                <li><a data-tooltip="My Wish List" class="star" href="/account/wish-list" oldtitle="My Wish List" title=""><img alt="My Wish List" src="//media.scdn4.secure.raxcdn.com/icon-header/wish-list.png"></a></li>
 
-                                <li><a data-tooltip="Multiple Checkout" class="multi-cart-icon" href="/login?previous=/account/open-carts-multiple" oldtitle="Multiple Checkout" title=""><img alt="" src="//media.scdn4.secure.raxcdn.com/icon-header/multi-checkout.png"></a></li>
-                                <li class="open-cart-link"><a title="Shopping Cart" class="cart" id="cart_account_link" href="#"><img alt="Shopping Cart" src="//media.scdn4.secure.raxcdn.com/icon-header/single-checkout.png"></a>
-                                <div class="cart-link-triangle"></div>
-                                <!-- div class="cart-account-list-container">
-                                    <div class="cart-account-list">
-                                        <ul class="cart-list-menu">
-                                            <li><a href="/login?previous=/account/open-carts">Log in to view open carts.</a></li>
-                                        </ul>
-                                    </div>
+            </ul>
+        </div>
+            <ul class="text-menu">
+                <!--li><a href="//buyer-lounge.lashowroom.com/">Buyer's Lounge</a></li -->
+                <li><a href="/new-arrivals">አዲስ የመታ</a></li>
+                <li><a href="/newest-members">አዲስ አባሎች</a></li>
+                <li><a href="/specials">አባሎች</a></li>
+                <li><a href="/login?previous=/on-sale">ሰልባጅ</a></li>
 
-                                </div -->
-                                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="menu-button">Menu</div>
+    <div class="search-module">
+        <form method="POST" action="/search-all">
+            <!-- Browse all stores Menu -->
+            <select class="store-list" onchange="autoSelect('parent',this,0);">
+                <option value="">ሱካችንን አስስ</option>
+                <option value="/qhandbags?menu_reset=1">Q HANDBAGS</option>
+                <option value="/rrouge?menu_reset=1">R Rouge</option>
+                <option value="/rainbow?menu_reset=1">RainBow</option>
+            </select>
+            <!-- End browse all stores Menu -->
 
-                            </ul>
-                        </div>
-                        <ul class="text-menu">
-                            <!--li><a href="//buyer-lounge.lashowroom.com/">Buyer's Lounge</a></li -->
-                            <li><a href="/new-arrivals">አዲስ የመታ</a></li>
-                            <li><a href="/newest-members">አዲስ አባሎች</a></li>
-                            <li><a href="/specials">አባሎች</a></li>
-                            <li><a href="/login?previous=/on-sale">ሰልባጅ</a></li>
-
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="menu-button">Menu</div>
-                <div class="search-module">
-                    <form method="POST" action="/search-all">
-                        <!-- Browse all stores Menu -->
-                        <select class="store-list" onchange="autoSelect('parent',this,0);">
-                            <option value="">ሱካችንን አስስ</option>
-                            <option value="/qhandbags?menu_reset=1">Q HANDBAGS</option>
-                            <option value="/rrouge?menu_reset=1">R Rouge</option>
-                            <option value="/rainbow?menu_reset=1">RainBow</option>
-                        </select>
-                        <!-- End browse all stores Menu -->
-
-                        <div class="collapsed-menu-search-bar" title="Collapsed Menu"><a id="collapsed_link_2" href="#menu"><img src="//media.scdn4.secure.raxcdn.com/icon-header/menu.png" alt="Responsive Menu"></a></div>
-                        <div class="search-bar">
-                            <input type="text" placeholder="ፈልግ" name="search" tabindex="2" maxlength="180" value="">
-                            <input type="image" src="//media.scdn4.secure.raxcdn.com/images/icon/icon-magnify-glass.png" alt="search">
-                        </div>
-                    </form>
-                </div>
-        {{>menuNav}}
+            <div class="collapsed-menu-search-bar" title="Collapsed Menu"><a id="collapsed_link_2" href="#menu"><img src="//media.scdn4.secure.raxcdn.com/icon-header/menu.png" alt="Responsive Menu"></a></div>
+            <div class="search-bar">
+                <input type="text" placeholder="ፈልግ" name="search" tabindex="2" maxlength="180" value="">
+                <input type="image" src="//media.scdn4.secure.raxcdn.com/images/icon/icon-magnify-glass.png" alt="search">
+            </div>
+        </form>
+    </div>
+    {{>menuNav}}
     </header>
 </template>
 
 <template name="menuNav">
         <ul data-breakpoint="800" class="flexnav">
             {{#each items}}
-            <li><a href="/{{ref}}">{{label}}</a>
-                <ul>
-                    {{> menuItems}}
-                </ul>
-            </li>
+                <li>
+                {{> contenteditable tag=tag}}
+                    <ul>
+                        {{> menuItems}}
+                    </ul>
+                </li>
             {{/each}}
         </ul>
 </template>

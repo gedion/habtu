@@ -99,3 +99,11 @@
 input {
     line-height: normal;
 }
+
+.language-selected {
+    background-color:#4cff00;
+}
+
+.mode {
+    font-size: 10px;
+}

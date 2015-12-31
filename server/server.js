@@ -3,22 +3,31 @@ Meteor.startup(function() {
     var content = Content.findOne();
     if(content == null) {
        var  contents = [
-                    {note: 'Header 0', tag: 'mod-0-header'},
-                    {note: 'Header 1', tag: 'mod-1-header'},
-                    {note: 'Header 2', tag: 'mod-2-header'},
-                    {note: 'Header 3', tag: 'mod-3-header'},
-                    {note: 'On Sale!', tag: 'mod-stockg-header'},
-                    {note: 'Rewards!', tag: 'mod-rewards-header'},
-                    {note: 'body 0', tag: 'mod-0-body'},
-                    {note: 'body 1', tag: 'mod-1-body'},
-                    {note: 'body 2', tag: 'mod-2-body'},
-                    {note: 'body 3', tag: 'mod-3-body'},
-                    {note: 'body 3', tag: 'mod-stockg-body'},
-                    {note: 'get rewards', tag: 'mod-rewards-body'},
-                    {note: 'footer 0', tag: 'mod-0-footer'},
-                    {note: 'footer 1', tag: 'mod-1-footer'},
-                    {note: 'footer 2', tag: 'mod-2-footer'},
-                    {note: 'footer 3', tag: 'mod-3-footer'}
+                    {note: 'Header 0', tag: 'mod-0-header', noteAmharic:''},
+                    {note: 'Header 1', tag: 'mod-1-header', noteAmharic:''},
+                    {note: 'Header 2', tag: 'mod-2-header', noteAmharic:''},
+                    {note: 'Header 3', tag: 'mod-3-header', noteAmharic:''},
+                    {note: 'On Sale!', tag: 'mod-stockg-header', noteAmharic:''},
+                    {note: 'Rewards!', tag: 'mod-rewards-header', noteAmharic:''},
+                    {note: 'Newest!', tag: 'mod-newest-header', noteAmharic:''},
+                    {note: 'body 0', tag: 'mod-0-body', noteAmharic:''},
+                    {note: 'body 1', tag: 'mod-1-body', noteAmharic:''},
+                    {note: 'body 2', tag: 'mod-2-body', noteAmharic:''},
+                    {note: 'body 3', tag: 'mod-3-body', noteAmharic:''},
+                    {note: 'body 43', tag: 'mod-stockg-body', noteAmharic:''},
+                    {note: 'body 5', tag: 'mod-newest-body', noteAmharic:''},
+                    {note: 'get rewards', tag: 'mod-rewards-body', noteAmharic:''},
+                    {note: 'footer 0', tag: 'mod-0-footer', noteAmharic:''},
+                    {note: 'footer 1', tag: 'mod-1-footer', noteAmharic:''},
+                    {note: 'footer 2', tag: 'mod-2-footer', noteAmharic:''},
+                    {note: 'footer 3', tag: 'mod-3-footer', noteAmharic:''},
+                    {tag:'menu-labels-one', ref:"WOMENS MANUFACTURERS",'noteAmharic':'',note:"WOMENS MANUFACTURERS"},
+                    {tag:'menu-labels-two', ref:"WOMENS DISTRIBUTORS",'noteAmharic':'',note:"WOMENS DISTRIBUTORS"},
+                    {tag:'menu-labels-three', ref:"MEN",'noteAmharic':'',note:"MEN"},
+                    {tag:'menu-labels-four', ref:"CHILDREN",'noteAmharic':'',note:"CHILDREN"},
+                    {tag:'menu-labels-five', ref:"ACCESSORIES",'noteAmharic':'',note:"ACCESSORIES"},
+                    {tag:'menu-labels-six', ref:"HANDBAGS",'noteAmharic':'',note:"HANDBAGS"},
+                    {tag:'menu-labels-seven', ref:"FOOTWEAR",'noteAmharic':'',note:"FOOTWEAR"}
         ];
 
         for(var i = 0;i< contents.length;i++){
