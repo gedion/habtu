@@ -1,5 +1,4 @@
 Meteor.startup(function() {
-    Content.remove({});
     var content = Content.findOne();
     if(content == null) {
        var  contents = [

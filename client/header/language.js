@@ -13,24 +13,27 @@ Template.language.events( {
         }
         Session.set('language', modeValue);
         localStorage.setItem('language', modeValue);
-        
+
     }
 
 });
-
-Template.language.helpers({ isAmharic: function() {
+var isAmharic  = function() {
         return Session.get('language') == 'amharic';
-    }
-});
+}
+
+Template.language.helpers({ isAmharic: isAmharic});
+Template.login.helpers({ isAmharic: isAmharic});
+Template.browserAllStoresMenu.helpers({ isAmharic: isAmharic});
+Template.textMenu.helpers({ isAmharic: isAmharic});
 Template.language.helpers({ lang: function() {
         var css = {
            amharic:'',
-           english:'language-selected' 
+           english:'language-selected'
         };
         if(Session.get('language') == 'amharic'){
             css = {
                amharic:'language-selected',
-               english:'' 
+               english:''
             };
         };
         return css;
