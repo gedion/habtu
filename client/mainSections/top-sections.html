@@ -14,7 +14,7 @@
 <template name="mainTabs">
     <div class="las-default-wrap center clearfix">
         {{#each mainTab}}
-            <div class="tab-home-page {{active}}"><p class="{{class}}">{{label}}</p></div>
+            {{> contenteditable tag=tag}}
         {{/each}}
     </div>
 </template>

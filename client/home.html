@@ -1,18 +1,27 @@
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link href="https://www.lashowroom.com/dist/css/lashowroom.min.css?d41d8cd98f00b204e9800998ecf8427e" rel="stylesheet" type="text/css">
 </head>
 
 <template name="main">
 {{>header}}
-    <main>
-        {{> topSections}}
-        {{> midSections}}
-    </main>
-    {{>footer}}
+{{> yield}}
+{{>footer}}
 </template>
 
 
 
+<template name="home">
+    <main>
+        {{> topSections}}
+        {{> midSections}}
+    </main>
+</template>
+<template name="toDo">
+    <main>
+        <div class="in-construction">
+                <img alt="Thumbnail" src="http://www.urbancapture.com/wp-content/uploads/yapb_cache/130306_1320_african_avenue_building_construction_addis_abeba_ethiopia.k40oaxfsfdsks4ok4sggwsg8.8hrw0xj94288kk84gsowgs4o4.th.jpeg" width="950" height="633">
+              <h1>IN CONSTRUCTION!:<br />ግንባታ ላይ!!</h1>
+        </div>
+    </main>
+</template>

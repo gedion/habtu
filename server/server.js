@@ -1,39 +1,45 @@
 Meteor.startup(function() {
+    Content.remove({});
     var content = Content.findOne();
     if(content == null) {
        var  contents = [
-                    {note: 'Header 0', tag: 'mod-0-header', noteAmharic:''},
-                    {note: 'Header 1', tag: 'mod-1-header', noteAmharic:''},
-                    {note: 'Header 2', tag: 'mod-2-header', noteAmharic:''},
-                    {note: 'Header 3', tag: 'mod-3-header', noteAmharic:''},
-                    {note: 'On Sale!', tag: 'mod-stockg-header', noteAmharic:''},
-                    {note: 'Rewards!', tag: 'mod-rewards-header', noteAmharic:''},
-                    {note: 'Newest!', tag: 'mod-newest-header', noteAmharic:''},
-                    {note: 'body 0', tag: 'mod-0-body', noteAmharic:''},
-                    {note: 'body 1', tag: 'mod-1-body', noteAmharic:''},
-                    {note: 'body 2', tag: 'mod-2-body', noteAmharic:''},
-                    {note: 'body 3', tag: 'mod-3-body', noteAmharic:''},
-                    {note: 'body 43', tag: 'mod-stockg-body', noteAmharic:''},
-                    {note: 'body 5', tag: 'mod-newest-body', noteAmharic:''},
-                    {note: 'get rewards', tag: 'mod-rewards-body', noteAmharic:''},
-                    {note: 'footer 0', tag: 'mod-0-footer', noteAmharic:''},
-                    {note: 'footer 1', tag: 'mod-1-footer', noteAmharic:''},
-                    {note: 'footer 2', tag: 'mod-2-footer', noteAmharic:''},
-                    {note: 'footer 3', tag: 'mod-3-footer', noteAmharic:''},
-                    {tag:'menu-labels-one', ref:"WOMENS MANUFACTURERS",'noteAmharic':'',note:"WOMENS MANUFACTURERS"},
-                    {tag:'menu-labels-two', ref:"WOMENS DISTRIBUTORS",'noteAmharic':'',note:"WOMENS DISTRIBUTORS"},
-                    {tag:'menu-labels-three', ref:"MEN",'noteAmharic':'',note:"MEN"},
-                    {tag:'menu-labels-four', ref:"CHILDREN",'noteAmharic':'',note:"CHILDREN"},
-                    {tag:'menu-labels-five', ref:"ACCESSORIES",'noteAmharic':'',note:"ACCESSORIES"},
-                    {tag:'menu-labels-six', ref:"HANDBAGS",'noteAmharic':'',note:"HANDBAGS"},
-                    {tag:'menu-labels-seven', ref:"FOOTWEAR",'noteAmharic':'',note:"FOOTWEAR"}
+                    {note: 'Tab one',   tag: 'main-tab-one',   noteAmharic:'ገጵ እንድ'},
+                    {note: 'Tab three', tag: 'main-tab-two',   noteAmharic:'ገጵ ሁለት'},
+                    {note: 'Tab four',  tag: 'main-tab-three', noteAmharic:'ገጵ ሶስት'},
+                    
+                    {note: 'What\'s new!', tag: 'whats-new-from-header',noteAmharic:'ምን እዲስ እለ!'},
+                    {note: 'Buy factory direct! Find the lowest prices on wholesale apparel by shopping straight from the manufacturer.', tag: 'whats-new-from-body',noteAmharic:'ምን እዲስ እለ'},
+
+                    {note: 'Header 0', tag: 'mod-0-header', noteAmharic:'ራስ 0'},
+                    {note: 'Header 1', tag: 'mod-1-header', noteAmharic:'ራስ 1'},
+                    {note: 'Header 2', tag: 'mod-2-header', noteAmharic:'ራስ 2'},
+                    {note: 'Header 3', tag: 'mod-3-header', noteAmharic:'ራስ 3'},
+                    {note: 'On Sale!', tag: 'mod-stockg-header', noteAmharic:'ቅናሽ ላይ'},
+                    {note: 'Rewards!', tag: 'mod-rewards-header', noteAmharic:'ሽልማት'},
+                    {note: 'Newest!', tag: 'mod-newest-header', noteAmharic:'አዲስ '},
+                    {note: 'Body 0', tag: 'mod-0-body', noteAmharic:'አካል 0'},
+                    {note: 'Body 1', tag: 'mod-1-body', noteAmharic:'አካል 1'},
+                    {note: 'Body 2', tag: 'mod-2-body', noteAmharic:'አካል 2'},
+                    {note: 'Body 3', tag: 'mod-3-body', noteAmharic:'አካል 3'},
+                    {note: 'Body 4', tag: 'mod-stockg-body', noteAmharic:'አካል 4'},
+                    {note: 'Body 5', tag: 'mod-newest-body', noteAmharic:'አካል 5'},
+                    {note: 'Get Rewards', tag: 'mod-rewards-body', noteAmharic:'ሽልማት አግኝ'},
+                    {note: 'Footer 0', tag: 'mod-0-footer', noteAmharic:'እግር 0'},
+                    {note: 'Footer 1', tag: 'mod-1-footer', noteAmharic:'እግር 1'},
+                    {note: 'Footer 2', tag: 'mod-2-footer', noteAmharic:'እግር 2'},
+                    {note: 'Footer 3', tag: 'mod-3-footer', noteAmharic:'እግር 3'},
+                    {tag:'menu-labels-one', ref:"WOMENS",'noteAmharic':'ሴቶች',note:"WOMENS"},
+                    {tag:'menu-labels-two', ref:"MEN",'noteAmharic':'ወንዶች',note:"MEN"},
+                    {tag:'menu-labels-four', ref:"CHILDREN",'noteAmharic':'ልጆች',note:"CHILDREN"},
+                    {tag:'menu-labels-five', ref:"ACCESSORIES",'noteAmharic':'ጌጣ ጌጥ',note:"ACCESSORIES"},
+                    {tag:'menu-labels-six', ref:"HANDBAGS",'noteAmharic':'ቦርሳ',note:"HANDBAGS"},
+                    {tag:'menu-labels-seven', ref:"FOOTWEAR",'noteAmharic':'ጫማ',note:"FOOTWEAR"}
         ];
 
         for(var i = 0;i< contents.length;i++){
             Content.insert(contents[i]);
         }
     }
-
     if (Galleries.findOne() === undefined) {
         gals = [
             {type:'newestMembers', src:"http://placehold.it/178x106", sortorder:1},
@@ -192,7 +198,6 @@ Meteor.startup(function() {
                  bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
             }
         ];
-
         for(var i = 0;i<gals.length;i++){
            Galleries.insert(gals[i]);
         }

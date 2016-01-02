@@ -14,6 +14,15 @@ Template.contenteditable.content = function () {
         }
         note = note || 'Click here and type to change label';
     switch (this.tag) {
+        case 'main-tab-one':
+            content = '<div class="tab-home-page tab-home-page-active-1"><p class="contempo-tab">'+ note +'</p></div>'
+            break;
+        case 'main-tab-two':
+            content = '<div class="tab-home-page "><p class="the-edge-tab">'+ note +'</p></div>'
+            break;
+        case 'main-tab-three':
+            content = '<div class="tab-home-page "><p class="sp-tab">'+ note +'</p></div>'
+            break;
         case 'menu-labels-one':
         case 'menu-labels-two':
         case 'menu-labels-three':
@@ -23,9 +32,11 @@ Template.contenteditable.content = function () {
         case 'menu-labels-seven':
             content = '<a href="'+this.ref+'" data-id="'+ dataId +'" class="cr-note" contenteditable="true">' + note + '</a>';
             break;
+        case 'mod-0-header':
         case 'mod-1-header':
         case 'mod-2-header':
         case 'mod-3-header':
+        case 'whats-new-from-header':
             content = '<h2 data-id="'+ dataId +'" class="cr-note" contenteditable="true">' + note + '</h2>';
             break;
         case 'mod-stockg-header':
@@ -42,6 +53,7 @@ Template.contenteditable.content = function () {
         case 'mod-stockg-body':
         case 'mod-rewards-body':
         case 'mod-rewards-body':
+        case 'whats-new-from-body':
             content = '<p data-id="'+ dataId +'" class="cr-note" contenteditable="true">' + note + '</p>';
             break;
         case 'mod-newest-body':

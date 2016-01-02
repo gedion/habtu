@@ -47,9 +47,9 @@ Template.sectionTwo.helpers({ tabToShow:tabToShow });
 Template.mainTabs.helpers({
     mainTab: function() {
         return [
-            {label:"ኮንተምፖራሪ", class:"contempo-tab", active:"tab-home-page-active-1"},
-            {label:"ምርት", class:"the-edge-tab"},
-            {label:"ኤስፒ", class:"sp-tab"}
+            {tag:'main-tab-one'},
+            {tag:'main-tab-two'},
+            {tag:'main-tab-three'}
         ];
     }
 });

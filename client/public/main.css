@@ -19,3 +19,15 @@
     line-height: 43px;
     text-transform: uppercase;
 }
+
+.in-construction { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+.in-construction h1 { 
+    position: absolute;
+    top: 6px;
+    color: white;
+    font-size: 46px;
+}

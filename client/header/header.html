@@ -52,16 +52,16 @@
 </template>
 
 <template name="menuNav">
-        <ul data-breakpoint="800" class="flexnav">
-            {{#each items}}
-                <li>
-                {{> contenteditable tag=tag}}
-                    <ul>
-                        {{> menuItems}}
-                    </ul>
-                </li>
-            {{/each}}
-        </ul>
+    <ul data-breakpoint="800" class="flexnav">
+        {{#each items}}
+            <li>
+            {{> contenteditable tag=tag}}
+                <ul>
+                    {{> menuItems}}
+                </ul>
+            </li>
+        {{/each}}
+    </ul>
 </template>
 
 <template name="menuItems">

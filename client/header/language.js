@@ -25,6 +25,7 @@ Template.language.helpers({ isAmharic: isAmharic});
 Template.login.helpers({ isAmharic: isAmharic});
 Template.browserAllStoresMenu.helpers({ isAmharic: isAmharic});
 Template.textMenu.helpers({ isAmharic: isAmharic});
+Template.searchbar.helpers({ isAmharic: isAmharic});
 Template.language.helpers({ lang: function() {
         var css = {
            amharic:'',
