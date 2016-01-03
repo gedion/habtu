@@ -2,7 +2,7 @@
 <template name="whatsNewFrom">
     {{#each gal}}
         <div class="whats-new-index-topheader clearfix">
-            <h5>What's new from: <a href="/lovein"><span data-id="{{_id}}" >{{newFromLabel}}</span></a></h5>
+            {{> contenteditable tag=bodyTag}}
             <a href="/lovein">
                 <img data-id="{{_id}}" src="{{newFromLogo}}" alt="">
             </a>

@@ -11,6 +11,9 @@ Template.midGalleries.helpers({
     }
 });
 
+Template.imageeditable.helpers({ imageeditable : function () {
+      return Galleries.findOne({type:this.type});
+}});
 
 Template.midSectionFourGals.helpers({
    midSectionFourGals: function() {

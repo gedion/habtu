@@ -1,7 +1,12 @@
-Template.main.events({
-  'click img ':function(e) {
+handleImageClick = function(e) {
         toastr.clear();
         var imgEl = $(e.target);
+        var id = imgEl.data('id'),
+            key= 'src';
+        if(!id) {
+            key= 'bgsrc',
+            id = imgEl.parent('.hero-banner-hp').data('id');
+        }
         toastr.options = {
           "closeButton": true,
           "positionClass": "toast-top-center",
@@ -15,16 +20,26 @@ Template.main.events({
         fileUploadInput.click([], function(e) {
             e.stopPropagation();
         });
-        $('.toastr-file-upload-button').click([], function(e) {
+        $('.toastr-file-upload-button').click({key:key,id:id}, handleImageUpload);
+  }
+
+handleImageUpload = function(e) {
+            console.log('data ', e.data);
+            var key = e.data.key,
+                id = e.data.id;
             e.preventDefault();
             var file = fileUploadInput[0].files[0],
                 reader = new FileReader();
             reader.onload = function(e) {
-              Galleries.update(imgEl.data('id'), { $set: { src: e.target.result }});
+                  var data  = {};
+                   data[key] =  e.target.result;
+                  Galleries.update(id, { $set:data});
             }
             reader.readAsDataURL(file);
             toastr.clear();
-        });
-  }
-});
+}
+Template.main.events({
+  'click .hero-banner-hp ':handleImageClick,
+  'click img':handleImageClick
 
+});

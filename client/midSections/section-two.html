@@ -7,7 +7,7 @@
                 {{> contenteditable tag='mod-rewards-header'}}
               </div>
               <div class="buyers-club-logo">
-                <img src="http://placehold.it/100x80" alt="">
+                {{>imageeditable type='mod-rewards-logo'}}
               </div>
               <div class="buyers-club-title">
                 {{> contenteditable tag='mod-rewards-body'}}
@@ -20,18 +20,22 @@
               </ul>
               <div class="buyers-club-module-main-content">
                 <div class="buyers-club-module-main-content-container">
-                  <h5>FEATURING: <span><a href="/musthave">Must Have</a> (1%)</span></h5>
+                  {{> contenteditable tag='mod-featuring-body'}}
                   <div class="buyers-club-module-main-content-gallery clearfix">
                        {{>midGalleries type='rewards'}}
                   </div>
                 </div>
               </div>
               <div class="buyers-club-bottom">
-                <p><a href="/services/buyer-rewards-participants" class="rewards-participate-click">Click Here to View Full List of Participants</a></p>
+                <!-- p><a href="/services/buyer-rewards-participants" class="rewards-participate-click">Click Here to View Full List of Participants</a></p -->
               </div>
 
             </div>
           </div>
         </div>
       </section>
+</template>
+
+<template name="imageeditable">
+    <img data-id="{{imageeditable._id}}" src="{{imageeditable.src}}" alt="">
 </template>

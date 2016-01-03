@@ -57,6 +57,10 @@ Template.contenteditable.content = function () {
             content = '<p data-id="'+ dataId +'" class="cr-note" contenteditable="true">' + note + '</p>';
             break;
         case 'mod-newest-body':
+        case 'mod-featuring-body':
+        case 'contempoWhatsNewBody':
+        case 'theEdgeWhatsNewBody':
+        case 'spWhatsNewBody':
             content = '<h5 data-id="'+ dataId +'" class="cr-note" contenteditable="true">' + note + '</h5>';
             break;
         case 'mod-0-footer':

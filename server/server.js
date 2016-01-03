@@ -1,13 +1,14 @@
 Meteor.startup(function() {
     Content.remove({});
+    Galleries.remove({});
     var content = Content.findOne();
     if(content == null) {
        var  contents = [
                     {note: 'Tab one',   tag: 'main-tab-one',   noteAmharic:'ገጵ እንድ'},
-                    {note: 'Tab three', tag: 'main-tab-two',   noteAmharic:'ገጵ ሁለት'},
-                    {note: 'Tab four',  tag: 'main-tab-three', noteAmharic:'ገጵ ሶስት'},
-                    
-                    {note: 'What\'s new!', tag: 'whats-new-from-header',noteAmharic:'ምን እዲስ እለ!'},
+                    {note: 'Tab two', tag: 'main-tab-two',   noteAmharic:'ገጵ ሁለት'},
+                    {note: 'Tab three',  tag: 'main-tab-three', noteAmharic:'ገጵ ሶስት'},
+
+                    {note: 'What\'s new?', tag: 'whats-new-from-header',noteAmharic:'ምን እዲስ ነገር እለ?'},
                     {note: 'Buy factory direct! Find the lowest prices on wholesale apparel by shopping straight from the manufacturer.', tag: 'whats-new-from-body',noteAmharic:'ምን እዲስ እለ'},
 
                     {note: 'Header 0', tag: 'mod-0-header', noteAmharic:'ራስ 0'},
@@ -16,7 +17,8 @@ Meteor.startup(function() {
                     {note: 'Header 3', tag: 'mod-3-header', noteAmharic:'ራስ 3'},
                     {note: 'On Sale!', tag: 'mod-stockg-header', noteAmharic:'ቅናሽ ላይ'},
                     {note: 'Rewards!', tag: 'mod-rewards-header', noteAmharic:'ሽልማት'},
-                    {note: 'Newest!', tag: 'mod-newest-header', noteAmharic:'አዲስ '},
+                    {note: 'Newest!', tag: 'mod-newest-header', noteAmharic:'አዲስ'},
+                    {note: 'Featuring!', tag: 'mod-featuring-body', noteAmharic:'ምርጥ'},
                     {note: 'Body 0', tag: 'mod-0-body', noteAmharic:'አካል 0'},
                     {note: 'Body 1', tag: 'mod-1-body', noteAmharic:'አካል 1'},
                     {note: 'Body 2', tag: 'mod-2-body', noteAmharic:'አካል 2'},
@@ -33,7 +35,10 @@ Meteor.startup(function() {
                     {tag:'menu-labels-four', ref:"CHILDREN",'noteAmharic':'ልጆች',note:"CHILDREN"},
                     {tag:'menu-labels-five', ref:"ACCESSORIES",'noteAmharic':'ጌጣ ጌጥ',note:"ACCESSORIES"},
                     {tag:'menu-labels-six', ref:"HANDBAGS",'noteAmharic':'ቦርሳ',note:"HANDBAGS"},
-                    {tag:'menu-labels-seven', ref:"FOOTWEAR",'noteAmharic':'ጫማ',note:"FOOTWEAR"}
+                    {tag:'menu-labels-seven', ref:"FOOTWEAR",'noteAmharic':'ጫማ',note:"FOOTWEAR"},
+                    {tag:'contempoWhatsNewBody',note:"What's new from tab 1", noteAmharic :"ምን እዲስ ገጵ 1" },
+                    {tag:'theEdgeWhatsNewBody', note:"What's new from tab 2", noteAmharic :"ምን እዲስ ገጵ 2"  },
+                    {tag:'spWhatsNewBody', note:"What's new from tab 3", noteAmharic :"ምን እዲስ ገጵ 3" }
         ];
 
         for(var i = 0;i< contents.length;i++){
@@ -140,8 +145,11 @@ Meteor.startup(function() {
             {type:'sp', tab:0, src: "http://placehold.it/150x220", sortorder:3},
             {type:'sp', tab:0, src: "http://placehold.it/150x220", sortorder:4},
             {type:'sp', tab:0, src: "http://placehold.it/150x220", sortorder:5},
+            {type:'mod-rewards-logo', tab:0, src: "http://placehold.it/100x80", sortorder:1},
+            {type:'newest-member-logo', tab:0, src: "http://placehold.it/230x30", sortorder:1},
             {
              type:'theEdgeWhatsNew',
+             bodyTag:'theEdgeWhatsNewBody',
              tab:0,
              newFromLabel:"The Edge",
              newFromLogo: 'http://placehold.it/240x60',
@@ -151,6 +159,7 @@ Meteor.startup(function() {
             },
             {
              type:'theEdgeWhatsNew',
+             bodyTag:'theEdgeWhatsNewBody',
              tab:1,
              newFromLabel:"The Edge",
              newFromLogo: 'http://placehold.it/240x60',
@@ -159,6 +168,8 @@ Meteor.startup(function() {
              sortorder:2
             },
             {
+             type:'spWhatsNew',
+             bodyTag:'spWhatsNewBody',
              type:'spWhatsNew',
              tab:0,
              newFromLabel:"SP",
@@ -169,6 +180,7 @@ Meteor.startup(function() {
             },
             {
                  type:'contempoWhatsNew',
+                 bodyTag:'contempoWhatsNewBody',
                  tab:0,
                  newFromLabel:"Boom Boom",
                  newFromLogo: 'http://placehold.it/240x60',
@@ -176,6 +188,7 @@ Meteor.startup(function() {
                  bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
             },{
                  type:'contempoWhatsNew',
+                 bodyTag:'contempoWhatsNewBody',
                  tab:1,
                  newFromLabel:"Boom Boom",
                  newFromLogo: 'http://placehold.it/240x60',
@@ -184,6 +197,7 @@ Meteor.startup(function() {
                  bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
             },{
                  type:'contempoWhatsNew',
+                 bodyTag:'contempoWhatsNewBody',
                  tab:2,
                  newFromLabel:"Boom Boom",
                  newFromLogo: 'http://placehold.it/240x60',
@@ -191,6 +205,7 @@ Meteor.startup(function() {
                  bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
             },{
                  type:'contempoWhatsNew',
+                 bodyTag:'contempoWhatsNewBody',
                  tab:3,
                  newFromLabel:"Boom Boom",
                  newFromLogo: 'http://placehold.it/240x60',
