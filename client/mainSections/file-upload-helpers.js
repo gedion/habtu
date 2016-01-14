@@ -5,7 +5,7 @@ handleImageClick = function(e) {
             key= 'src';
         if(!id) {
             key= 'bgsrc',
-            id = imgEl.parent('.hero-banner-hp').data('id');
+            id = document.querySelector('.hero-banner-hp').dataset.id;
         }
         toastr.options = {
           "closeButton": true,
@@ -24,7 +24,6 @@ handleImageClick = function(e) {
   }
 
 handleImageUpload = function(e) {
-            console.log('data ', e.data);
             var key = e.data.key,
                 id = e.data.id;
             e.preventDefault();
