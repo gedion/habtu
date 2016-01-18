@@ -1,6 +1,4 @@
 Meteor.startup(function() {
-    Content.remove({});
-    Galleries.remove({});
     var content = Content.findOne();
     if(content == null) {
        var  contents = [

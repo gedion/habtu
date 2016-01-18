@@ -1,4 +1,4 @@
-var lang = localStorage.getItem('language') || 'amharic';
+var lang = localStorage.getItem('language') || 'english';
 Session.set('language', lang);
 Template.language.events( {
     'click .mode':  function( evt) {
