@@ -1,4 +1,9 @@
 handleImageClick = function(e) {
+        user = Meteor.user();
+        if (!user || user.username != 'admin') {
+           return;
+        }
+
         toastr.clear();
         var imgEl = $(e.target);
         var id = imgEl.data('id'),

@@ -33,3 +33,7 @@ Template.searchbar.events({
    }
 }
 });
+
+Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"
+});

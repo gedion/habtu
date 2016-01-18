@@ -7,7 +7,13 @@ Template.contenteditable.content = function () {
     var content = '',
         note = this.note,
         dataId = this._id,
-        lang = Session.get('language');
+        lang = Session.get('language'),
+        user = Meteor.user(),
+        contenteditable = "false";
+
+        if (user && user.username == 'admin') {
+            contenteditable = "true";
+        }
 
         if(lang == 'amharic') {
             note = this.noteAmharic;
@@ -15,13 +21,13 @@ Template.contenteditable.content = function () {
         note = note || 'Click here and type to change label';
     switch (this.tag) {
         case 'main-tab-one':
-            content = '<div class="tab-home-page tab-home-page-active-1"><p class="contempo-tab">'+ note +'</p></div>'
+            content = '<div class="tab-home-page tab-home-page-active-1" contenteditable="'+contenteditable+'"><p class="contempo-tab">'+ note +'</p></div>'
             break;
         case 'main-tab-two':
-            content = '<div class="tab-home-page "><p class="the-edge-tab">'+ note +'</p></div>'
+            content = '<div class="tab-home-page "><p class="the-edge-tab" contenteditable="'+contenteditable+'">'+ note +'</p></div>'
             break;
         case 'main-tab-three':
-            content = '<div class="tab-home-page "><p class="sp-tab">'+ note +'</p></div>'
+            content = '<div class="tab-home-page "><p class="sp-tab" contenteditable="'+contenteditable+'">'+ note +'</p></div>'
             break;
         case 'menu-labels-one':
         case 'menu-labels-two':
@@ -30,21 +36,21 @@ Template.contenteditable.content = function () {
         case 'menu-labels-five':
         case 'menu-labels-six':
         case 'menu-labels-seven':
-            content = '<a href="'+this.ref+'" data-id="'+ dataId +'" class="cr-note" contenteditable="true">' + note + '</a>';
+            content = '<a href="'+this.ref+'" data-id="'+ dataId +'" class="cr-note" contenteditable="'+contenteditable+'">' + note + '</a>';
             break;
         case 'mod-0-header':
         case 'mod-1-header':
         case 'mod-2-header':
         case 'mod-3-header':
         case 'whats-new-from-header':
-            content = '<h2 data-id="'+ dataId +'" class="cr-note" contenteditable="true">' + note + '</h2>';
+            content = '<h2 data-id="'+ dataId +'" class="cr-note" contenteditable="'+contenteditable+'">' + note + '</h2>';
             break;
         case 'mod-stockg-header':
         case 'mod-rewards-header':
-            content = '<p data-id="'+ dataId +'" class="module-titles cr-note" contenteditable="true">' + note + '</p>';
+            content = '<p data-id="'+ dataId +'" class="module-titles cr-note" contenteditable="'+contenteditable+'">' + note + '</p>';
             break;
         case 'mod-newest-header':
-            content = '<p data-id="'+ dataId +'" class="module-titles white cr-note" contenteditable="true">' + note + '</p>';
+            content = '<p data-id="'+ dataId +'" class="module-titles white cr-note" contenteditable="'+contenteditable+'">' + note + '</p>';
         break;
         case 'mod-0-body':
         case 'mod-1-body':
@@ -54,21 +60,21 @@ Template.contenteditable.content = function () {
         case 'mod-rewards-body':
         case 'mod-rewards-body':
         case 'whats-new-from-body':
-            content = '<p data-id="'+ dataId +'" class="cr-note" contenteditable="true">' + note + '</p>';
+            content = '<p data-id="'+ dataId +'" class="cr-note" contenteditable="'+contenteditable+'">' + note + '</p>';
             break;
         case 'mod-newest-body':
         case 'mod-featuring-body':
         case 'contempoWhatsNewBody':
         case 'theEdgeWhatsNewBody':
         case 'spWhatsNewBody':
-            content = '<h5 data-id="'+ dataId +'" class="cr-note" contenteditable="true">' + note + '</h5>';
+            content = '<h5 data-id="'+ dataId +'" class="cr-note" contenteditable="'+contenteditable+'">' + note + '</h5>';
             break;
         case 'mod-0-footer':
         case 'mod-1-footer':
         case 'mod-2-footer':
         case 'mod-3-footer':
               content = '<div>' +
-                            '<p data-id="'+ dataId +'" class="cr-note" contenteditable="true">'+ note + '</p>' +
+                            '<p data-id="'+ dataId +'" class="cr-note" contenteditable="'+contenteditable+'">'+ note + '</p>' +
                         '</div>';
             break;
     }
