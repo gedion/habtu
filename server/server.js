@@ -7,7 +7,7 @@ Meteor.startup(function() {
                     {note: 'Tab three',  tag: 'main-tab-three', noteAmharic:'ገጵ ሶስት'},
 
                     {note: 'What\'s new?', tag: 'whats-new-from-header',noteAmharic:'ምን እዲስ ነገር እለ?'},
-                    {note: 'Buy factory direct! Find the lowest prices on wholesale apparel by shopping straight from the manufacturer.', tag: 'whats-new-from-body',noteAmharic:'ምን እዲስ እለ'},
+                    {note: 'What\'s new?.', tag: 'whats-new-from-body',noteAmharic:'ምን እዲስ እለ'},
 
                     {note: 'Header 0', tag: 'mod-0-header', noteAmharic:'ራስ 0'},
                     {note: 'Header 1', tag: 'mod-1-header', noteAmharic:'ራስ 1'},
@@ -43,7 +43,6 @@ Meteor.startup(function() {
             Content.insert(contents[i]);
         }
     }
-    Galleries.remove({});
     if (Galleries.findOne() === undefined) {
         gals = [
             {type:'newestMembers', src:"http://placehold.it/178x106", sortorder:1},
