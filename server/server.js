@@ -43,6 +43,7 @@ Meteor.startup(function() {
             Content.insert(contents[i]);
         }
     }
+    Galleries.remove({});
     if (Galleries.findOne() === undefined) {
         gals = [
             {type:'newestMembers', src:"http://placehold.it/178x106", sortorder:1},
@@ -151,8 +152,8 @@ Meteor.startup(function() {
              tab:0,
              newFromLabel:"The Edge",
              newFromLogo: 'http://placehold.it/240x60',
-             bgsrc: '//media.scdn4.secure.raxcdn.com/10/edge_right_3.jpg',
-             bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_mitto.png',
+             bgsrc: 'http://placehold.it/1230x420/fff',
+             bgsrc2: 'http://placehold.it/300x75',
              sortorder:1
             },
             {
@@ -161,8 +162,8 @@ Meteor.startup(function() {
              tab:1,
              newFromLabel:"The Edge",
              newFromLogo: 'http://placehold.it/240x60',
-             bgsrc: '//media.scdn4.secure.raxcdn.com/10/edge_right_2.jpg',
-             bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_mitto.png',
+             bgsrc: 'http://placehold.it/1230x420/fff',
+             bgsrc2: 'http://placehold.it/300x75',
              sortorder:2
             },
             {
@@ -172,8 +173,8 @@ Meteor.startup(function() {
              tab:0,
              newFromLabel:"SP",
              newFromLogo: 'http://placehold.it/240x60',
-             bgsrc: '//media.scdn4.secure.raxcdn.com/9/spot/bg/2015/julia_1230-420_20151211115802.jpg',
-             bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_julia.png',
+             bgsrc: 'http://placehold.it/1230x420/fff',
+             bgsrc2: 'http://placehold.it/300x75',
              sortorder:1
             },
             {
@@ -182,33 +183,33 @@ Meteor.startup(function() {
                  tab:0,
                  newFromLabel:"Boom Boom",
                  newFromLogo: 'http://placehold.it/240x60',
-                 bgsrc: '//media.scdn4.secure.raxcdn.com/9/spot/bg/2015/iris_1230-420_20151224115323.jpg',
-                 bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
+                 bgsrc: 'http://placehold.it/1230x420/fff',
+                 bgsrc2: 'http://placehold.it/300x75'
             },{
                  type:'contempoWhatsNew',
                  bodyTag:'contempoWhatsNewBody',
                  tab:1,
                  newFromLabel:"Boom Boom",
                  newFromLogo: 'http://placehold.it/240x60',
-                 bgsrc: '//media.scdn4.secure.raxcdn.com/9/spot/bg/2015/koriamerica_1230-420_20151224120211.jpg',
+                 bgsrc: 'http://placehold.it/1230x420/fff',
                  bghref: '/entro',
-                 bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
+                 bgsrc2: 'http://placehold.it/300x75'
             },{
                  type:'contempoWhatsNew',
                  bodyTag:'contempoWhatsNewBody',
                  tab:2,
                  newFromLabel:"Boom Boom",
                  newFromLogo: 'http://placehold.it/240x60',
-                 bgsrc: '//media.scdn4.secure.raxcdn.com/9/spot/bg/2015/minxapparel_1230-420_20151224115157.jpg',
-                 bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
+                 bgsrc: 'http://placehold.it/1230x420/fff',
+                 bgsrc2: 'http://placehold.it/300x75'
             },{
                  type:'contempoWhatsNew',
                  bodyTag:'contempoWhatsNewBody',
                  tab:3,
                  newFromLabel:"Boom Boom",
                  newFromLogo: 'http://placehold.it/240x60',
-                 bgsrc: '//media.scdn4.secure.raxcdn.com/9/spot/bg/2015/hemandthread_1230-420_20151224123700.jpg',
-                 bgsrc2: '//media.scdn4.secure.raxcdn.com/logo/9/logo9_entro.png',
+                 bgsrc: 'http://placehold.it/1230x420/fff',
+                 bgsrc2: 'http://placehold.it/300x75'
             }
         ];
         for(var i = 0;i<gals.length;i++){

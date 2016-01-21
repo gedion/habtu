@@ -192,7 +192,7 @@ code span {
 #site-footer {
     overflow: hidden;
     clear: both;
-    background: rgba(0, 0, 0, 0.075);
+    background-color: wheat;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding: 1em 0;
     box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.05);
@@ -224,7 +224,7 @@ code span {
     body {
         font-size: 100%; }
     body #site-header {
-        background-color: #f1f1f1;
+        background-color: wheat;
         border-bottom: 1px solid #ccc;
         padding: 13px 12px 11px;
         min-height: 130px; }
